@@ -28,7 +28,8 @@
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="Página Inicial">
     <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <meta data-intl-tel-input-cdn-path="intlTelInput/">
+</head>
   <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="pt"><header class="u-clearfix u-header u-header" id="sec-8c05"><div class="u-clearfix u-sheet u-sheet-1">
         <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
           <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
@@ -61,10 +62,74 @@
         </nav>
         <img class="u-image u-image-round u-preserve-proportions u-radius-10 u-image-1" src="images/Logo.jpeg" alt="" data-image-width="500" data-image-height="500">
       </div></header>
-      
+   
 
-<div>
-    <img src="images/-min.jpg" alt="" class="custom-expanded u-image -u u-image-default u-image-">
-  </div>
+
+  <h2>Preencha os Seguintes Campos</h2>
+  <ul class="Funcionário">
+      <p>Informações do Funcionário:</p>
+      <li>
+          <label for="nomeFuncionario">Nome do Funcionário:</label>
+          <input type="text" id="nomeFuncionario" required><br>
+          <label for="numeroMatricula">Número da Matrícula:</label>
+          <input type="text" id="numeroMatricula" required><br>
+          <label for="funcao">Função:</label>
+          <input type="text" id="funcao" required><br>
+      </li>
+  </ul>
+  <ul class="Ferramenta">
+      <p>Informações da Ferramenta:</p>
+      <li>
+          <label for="codigoFerramenta">Código da Ferramenta:</label>
+          <input type="text" id="codigoFerramenta" required><br>
+          <label for="codigoProduto">Código do Produto:</label>
+          <input type="text" id="codigoProduto" required><br>
+          <label for="marca">Marca:</label>
+          <input type="text" id="Marca" required><br>
+          <label for="estado">Estado:</label>
+          <input type="text" id="estado" required><br>
+          <label for="valor">Valor:</label>
+          <input type="text" id="valor" required><br>
+          <label for="dataAquisicao">Data de Aquisição:</label>
+          <input type="text" id="dataAquisicao" required><br>
+      </li>
+  </ul>
+  <input type="submit" value="Adicionar Ferramentas">
+</form>
+
+<button onclick="gerarRelatorio()">Gerar Relatório</button>
+
+<div id="relatorio"></div>
+
+<script>
+  function gerarRelatorio() {
+      var nomeFuncionario = document.getElementById("nomeFuncionario").value;
+      var numeroMatricula = document.getElementById("numeroMatricula").value;
+      var funcao = document.getElementById("funcao").value;
+      var codigoFerramenta = document.getElementById("codigoFerramenta").value;
+      var codigoProduto = document.getElementById("codigoProduto").value;
+      var marca = document.getElementById("Marca").value;
+      var estado = document.getElementById("estado").value;
+      var valor = document.getElementById("valor").value;
+      var dataAquisicao = document.getElementById("dataAquisicao").value;
+
+      var relatorio = "Relatório de Ferramentas<br>";
+      relatorio += "Informações do Funcionário:<br>";
+      relatorio += "Nome do Funcionário: " + nomeFuncionario + "<br>";
+      relatorio += "Número da Matrícula: " + numeroMatricula + "<br>";
+      relatorio += "Função: " + funcao + "<br><br>";
+      relatorio += "Informações da Ferramenta:<br>";
+      relatorio += "Código da Ferramenta: " + codigoFerramenta + "<br>";
+      relatorio += "Código do Produto: " + codigoProduto + "<br>";
+      relatorio += "Marca: " + marca + "<br>";
+      relatorio += "Estado: " + estado + "<br>";
+      relatorio += "Valor: " + valor + "<br>";
+      relatorio += "Data de Aquisição: " + dataAquisicao;
+
+      document.getElementById("relatorio").innerHTML = relatorio;
+  }
+</script>
+
+  
 </body>
 </html>
